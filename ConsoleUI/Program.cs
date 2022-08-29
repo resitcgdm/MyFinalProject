@@ -6,14 +6,30 @@
 
 
 using Business.Concrete;
+using Core.DataAccess.EntityFrameork;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.ınMemory;
 
 //SOLID
 //Open Closed Pirinciple : İlerde yeni bir değişiklik gelirse mevcut kodlarına dokunamazsın.
-ProductManager productManager = new ProductManager(new EfProductDal());
+//ProductTest();
 
-foreach (var product in productManager.GetByUnitPrice(50,100))  
+
+CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+foreach (var category in categoryManager.GetAll())
 {
-    Console.WriteLine("Ürün Adı: {0}----Idsi:{1}",product.ProductName,product.UnitPrice);
+    Console.WriteLine(category.CategoryName);
+    Console.WriteLine(" Category Id: {0}", category.CategoryId);
+}
+
+
+
+static void ProductTest()
+{
+    ProductManager productManager = new ProductManager(new EfProductDal());
+
+    foreach (var product in productManager.GetByUnitPrice(50, 100))
+    {
+        Console.WriteLine("Ürün Adı: {0}----Idsi:{1}", product.ProductName, product.UnitPrice);
+    }
 }

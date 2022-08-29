@@ -1,4 +1,5 @@
-﻿using Entities.Abstract;
+﻿
+using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,8 +7,12 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Abstract
-{
+namespace Core.DataAccess
+{   
+    // Core katmanı evrensel katmanımızdır.Bütün projelerde... sadece northwindde değil.
+    // Core katmanı diğer katmanları referans almaz zaten evrensel olmasının sebebi bu.
+
+
         //Generic Constraint yapıyoruz aşağıda yani  T ancak referans tip olabilir.Değer tip olamaz int vs gibi.
         //IEntity olabilir veya ientity implemente eden bir nesne olabilir .
         //new(): newlenebilir olmalı.Interfaceler newlenemez yani IEntity olmasın istiyoruz sadece varlıklarımız olsun istiyoruz.

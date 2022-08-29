@@ -1,4 +1,4 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {   
-    //Bir classın default hali internaldir. Internal : bu classa sadece entites ulaşabilir demek.
+    //Bir classın default hali internaldir. Internal : bu classa sadece entities ulaşabilir demek.
     public class Product:IEntity //public : bu classa diğer katmanlarda ulaşabilsin demek.
     {
         public int ProductId { get; set; }
